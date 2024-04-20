@@ -80,7 +80,7 @@
               </span>
             </div>
             <div
-              class="in-cart rounded-xl bg-White flex flex-col justify-around drop-shadow-2xl absolute w-[93vw] sm:max-w-[350px] right-[50%] translate-x-[50%] sm:translate-x-0 sm:right-[5%]  min-h-72 transition-all duration-500 z-10"
+              class="in-cart rounded-xl bg-White flex flex-col justify-around drop-shadow-2xl absolute w-[93vw] sm:max-w-[350px] right-[50%] translate-x-[50%] sm:translate-x-0 sm:right-[5%] min-h-72 transition-all duration-500 z-10"
             >
               <p class="border-b-2 border-slate-200 p-5 font-bold text-xl">
                 cart
@@ -105,19 +105,23 @@
 
     <main>
       <div
-        class="container mx-auto lg:w-3/4 flex flex-col md:flex-row justify-between md:mt-16 pb-16"
+        class="container  mx-auto lg:w-3/4 flex flex-col md:flex-row justify-between md:mt-16 pb-16"
       >
         <section class="images md:w-5/12">
           <div class="main-active-img relative">
             <img
-              class="md:rounded-xl md:cursor-pointer object-contain"
+              class="md:rounded-xl cursor-pointer object-contain"
               src="./images/image-product-1.jpg"
               alt="main-active-img"
             />
-            <span id="next" class=" rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute right-5 top-1/2 md:hidden">
+            <span
+              class="next rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute right-5 top-1/2 md:hidden"
+            >
               <img src="./images/icon-next.svg" alt="icon-next" />
             </span>
-            <span id="prev" class=" rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute left-5 top-1/2 md:hidden">
+            <span
+              class="prev rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute left-5 top-1/2 md:hidden"
+            >
               <img src="./images/icon-previous.svg" alt="icon-previous" />
             </span>
           </div>
@@ -235,6 +239,58 @@
         </section>
       </div>
     </main>
+
+    <div
+      class="light-box  bg-Black fixed top-0  min-h-svh w-full z-30 grid place-items-center"
+    >
+      <section class="images w-72 sm:w-[470px]">
+        <div class="close py-5">
+          <img class="close-light-box object-cover w-5 ml-auto cursor-pointer" src="./images/icon-close.svg" alt="icon-close" />
+        </div>
+        <div class="main-active-img-light-box relative ">
+          <img
+            class="rounded-xl object-contain"
+            src="./images/image-product-1.jpg"
+            alt="main-active-img-light-box"
+          />
+          <span
+            class="next rounded-[50%] bg-white w-10 h-10  md:w-12 md:h-12 grid place-items-center -translate-y-1/2 cursor-pointer absolute right-0 top-1/2 translate-x-1/2"
+          >
+            <img src="./images/icon-next.svg" alt="icon-next" />
+          </span>
+          <span
+            class="prev rounded-[50%] bg-white w-10 h-10  md:w-12 md:h-12 grid place-items-center -translate-y-1/2 cursor-pointer absolute left-0 top-1/2 -translate-x-1/2"
+          >
+            <img src="./images/icon-previous.svg" alt="icon-previous" />
+          </span>
+        </div>
+        <div
+          id="thumbnails"
+          class="flex mt-9 max-w-full thumbnails justify-between"
+        >
+          <img
+            class="active-img rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="image-product-1"
+          />
+          <img
+            class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="image-product-2"
+          />
+          <img
+            class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="image-product-3"
+          />
+          <img
+            class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="image-product-4"
+          />
+        </div>
+      </section>
+    </div>
 
     <script src="./main.js"></script>
   </body>

@@ -79,4 +79,12 @@
     top: 96px;
   }
 
+  .light-box {
+    right: -120%;
+    transition: all .5s;
+  }
+
+  .show-light-box {
+    right:0;
+  }
 }
