@@ -1,44 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | E-commerce product page</title>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="min-h-[100vh]">
+    <header>
+      <div class="container mx-auto">
+        <nav
+          class="border-b-2 border-gray-200 flex md:gap-16 items-center justify-between px-5 md:px-0"
+        >
+          <img
+            class="menu cursor-pointer md:hidden"
+            src="./images/icon-menu.svg"
+            alt=""
+          />
+          <div class="logo"><img src="./images/logo.svg" alt="logo" /></div>
+          <ul id="links" class="cus-list flex gap-6 flex-grow self-stretch">
+            <li class="pb-9 close cursor-pointer block md:hidden">
+              <img src="./images/icon-close.svg" alt="icon-close" />
+            </li>
+            <li
+              class="nav-li hover:border-b-2 hover:text-VeryDarkBlue hover:border-Orange"
+            >
+              Collections
+            </li>
+            <li
+              class="nav-li hover:border-b-2 hover:text-VeryDarkBlue hover:border-Orange"
+            >
+              Men
+            </li>
+            <li
+              class="nav-li hover:border-b-2 hover:text-VeryDarkBlue hover:border-Orange"
+            >
+              Women
+            </li>
+            <li
+              class="nav-li hover:border-b-2 hover:text-VeryDarkBlue hover:border-Orange"
+            >
+              About
+            </li>
+            <li
+              class="nav-li hover:border-b-2 hover:text-VeryDarkBlue hover:border-Orange"
+            >
+              Contact
+            </li>
+          </ul>
+          <div class="cart py-4 md:py-7 flex gap-3 md:gap-8 items-center">
+            <div class="relative">
+              <svg
+                id="togCart"
+                class="cursor-pointer cart-icon"
+                width="22"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#69707D"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              <span
+                id="cartMount"
+                class="absolute right-0 top-0 bg-Orange rounded-lg px-2 py-px cursor-pointer text-white translate-x-2/4 -translate-y-2/4 block text-xs opacity-0 transition-all pointer-events-none"
+              >
+                0
+              </span>
+            </div>
+            <div
+              class="in-cart rounded-xl bg-White flex flex-col justify-around drop-shadow-2xl absolute w-[93vw] sm:max-w-[350px] right-[50%] translate-x-[50%] sm:translate-x-0 sm:right-[5%]  min-h-72 transition-all duration-500 z-10"
+            >
+              <p class="border-b-2 border-slate-200 p-5 font-bold text-xl">
+                cart
+              </p>
+              <p
+                id="msgForEmpty"
+                class="p-5 text-DarkGrayishBlue font-bold flex-grow grid place-items-center"
+              >
+                Your cart is empty.
+              </p>
+              <div class="show"></div>
+            </div>
+            <img
+              class="cursor-pointer w-12 hover:border-2 hover:border-Orange rounded-full transition-all"
+              src="./images/image-avatar.png"
+              alt="avatar"
+            />
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  Sneaker Company
+    <main>
+      <div
+        class="container mx-auto lg:w-3/4 flex flex-col md:flex-row justify-between md:mt-16 pb-16"
+      >
+        <section class="images md:w-5/12">
+          <div class="main-active-img relative">
+            <img
+              class="md:rounded-xl md:cursor-pointer object-contain"
+              src="./images/image-product-1.jpg"
+              alt="main-active-img"
+            />
+            <span id="next" class=" rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute right-5 top-1/2 md:hidden">
+              <img src="./images/icon-next.svg" alt="icon-next" />
+            </span>
+            <span id="prev" class=" rounded-[50%] bg-white w-10 h-10 grid place-items-center -translate-y-1/2 cursor-pointer absolute left-5 top-1/2 md:hidden">
+              <img src="./images/icon-previous.svg" alt="icon-previous" />
+            </span>
+          </div>
+          <div
+            id="thumbnails"
+            class="hidden md:flex mt-9 max-w-full thumbnails justify-between"
+          >
+            <img
+              class="active-img rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="image-product-1"
+            />
+            <img
+              class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="image-product-2"
+            />
+            <img
+              class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="image-product-3"
+            />
+            <img
+              class="rounded-xl hover:opacity-60 transition-all cursor-pointer object-contain w-1/5"
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="image-product-4"
+            />
+          </div>
+        </section>
+        <section class="info p-5 md:px-0 md:w-6/12 self-center">
+          <div class="text-content">
+            <h1 class="text-Orange font-bold uppercase">Sneaker Company</h1>
+            <h2
+              class="text-VeryDarkBluec text-3xl md:text-5xl font-bold pb-5 pt-4"
+            >
+              Fall Limited Edition Sneakers
+            </h2>
+            <p class="text-DarkGrayishBlue mb-4 max-w-[420px]">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+          <div
+            class="price font-bold flex gap-3 flex-row justify-between items-center md:flex-col md:items-start"
+          >
+            <p class="text-2xl flex items-center">
+              $125.00<span
+                class="text-Orange bg-[#FEEFE2] rounded p-1 ml-4 text-sm"
+                >50%</span
+              >
+            </p>
+            <p class="text-GrayishBlue line-through font-thin">$250.00</p>
+          </div>
+          <div
+            class="controls gap-4 bg-LightGrayishBlue flex flex-col md:flex-row justify-between mt-6 py-6 md:max-w-[420px]"
+          >
+            <p
+              class="flex justify-between items-stretch font-bold text-2xl px-6 flex-grow"
+            >
+              <span
+                class="cursor-pointer opacity-50 minus grid place-items-center"
+              >
+                <svg
+                  width="12"
+                  height="4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                      id="a"
+                    />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+                </svg>
+              </span>
+              <span
+                class="selection:bg-transparent mount grid place-items-center min-w-9"
+                >0</span
+              >
+              <span class="cursor-pointer plus grid place-items-center">
+                <svg
+                  width="12"
+                  height="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                      id="b"
+                    />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+                </svg>
+              </span>
+            </p>
+            <button
+              class="addToCart selection:bg-transparent bg-Orange flex items-center justify-center gap-3 flex-grow py-4 rounded-xl font-bold text-white md:w-6/12 shadow-lg shadow-Orange/60"
+            >
+              <span>
+                <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                    fill="#fff"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+              </span>
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
 
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="./main.js"></script>
+  </body>
 </html>

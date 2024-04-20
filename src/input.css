@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+
+  ::selection {
+    background-color: transparent;
+  }
+
+  .container {
+    @apply md:px-3;
+  }
+
+  .cart-icon:hover path {
+    transition: all 0.5s;
+    fill: #1d2025;
+  }
+
+  .nav-li {
+    @apply flex items-center transition-all md:text-DarkGrayishBlue   cursor-pointer;
+  }
+
+  @media (max-width: 768px) {
+    .cus-list {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 75vw;
+      @apply bg-White;
+      flex-direction: column;
+      align-content: center;
+      padding: 30px 20px !important;
+      translate: -110% 100%;
+      @apply items-start;
+      color: #171717 !important;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    nav.overlay::after {
+      content: "";
+      position: absolute;
+      @apply bg-Black;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s;
+      z-index: 50;
+    }
+
+    .reset-tranlate {
+      translate: 0;
+    }
+  }
+}
+
+@layer {
+  .active-img {
+    box-shadow: 0 0 0 4px rgba(255, 123, 8, 0.934);
+    filter: brightness(80%) ;
+  }
+  .addToCart:hover  ,
+  .plus:hover path , 
+  .minus:hover path {
+    transition: all .6s;
+    opacity: .6;
+  }
+
+  .in-cart {
+    top: -10000px;
+  }
+
+  .reset-position {
+    top: 96px;
+  }
+
+}
