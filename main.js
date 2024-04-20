@@ -126,8 +126,8 @@ thumbnails.forEach((img, index) => {
     } else {
       thumbnails[index + thumbnails.length / 2].classList.add("active-img");
     }
+    
     e.target.classList.add("active-img");
-
     productActiveImg.src = e.target.src.replace("-thumbnail", "");
     cheker();
     syncImgWithMainActive();
